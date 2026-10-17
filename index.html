@@ -1241,9 +1241,9 @@ function micTick(){
   for(i=0;i<mic.data.length;i++){ d = (mic.data[i]-128)/128; sum += d*d; }
   var rms = Math.sqrt(sum/mic.data.length);
   var f = $('#meterFill'); if(f) f.style.width = Math.min(100, rms*420) + '%';
-  if(rms > 0.09) mic.hold += 0.016;
-  else mic.hold = Math.max(0, mic.hold - 0.03);
-  if(mic.hold > 0.45){ mic.hold = 0; stopMic(); blowAll(); }
+  if(rms > 0.05) mic.hold += 0.032;
+  else mic.hold = Math.max(0, mic.hold - 0.012);
+  if(mic.hold > 0.22){ mic.hold = 0; stopMic(); blowAll(); }
 }
 
 /* ================= 10. 祝福场景 ================= */
